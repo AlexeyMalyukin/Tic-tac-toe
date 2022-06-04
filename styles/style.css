@@ -26,11 +26,11 @@
 }
 
 .net_item.red {
-    background-color: red;
+    color: red;
 }
 
 .net_item.blue {
-    background-color: blue;
+    color: blue;
 }
 
 .winner {

@@ -21,24 +21,29 @@ for (const piece of netPieces) {
 
         if (piece.contains == tic || piece.contains == toe) {
             piece.removeEventListener("click", clickOn);
+            
 
-        } else if (player != '' || clickNum >= 9) {
+        }/* else if (player == '' && clickNum >= 9) {
             piece.removeEventListener("click", clickOn);
+            winner.innerHTML = 'Its a draw!';
         
-        } else  {
+        }*/ else  {
             if (clickNum%2 == 0) {
                 //piece.classList.add('red');
                 //piece.classList.remove('blue');
                 piece.append(tic);
+                piece.classList.add('red');
                 clickNum++;
                 piece.removeEventListener("click", clickOn);
                 check();
                 if (player != '') {
                     piece.removeEventListener("click", clickOn);
                     winner.innerHTML = `Winner is ${player} `;
-        
-        
-        
+                    
+                } else if (player == '' && clickNum >= 9) {
+                    piece.removeEventListener("click", clickOn);
+                    winner.innerHTML = 'Its a draw!';
+                
                 }
                // if (clickNum >= 8) {
                    // winner.innerHTML = `Winner is ${player} `;
@@ -47,12 +52,18 @@ for (const piece of netPieces) {
                 //piece.classList.add('blue');
                 //piece.classList.remove('red');
                 piece.append(toe);
+                piece.classList.add('blue');
                 clickNum++;
                 piece.removeEventListener("click", clickOn);
                 check();
                 if (player != '') {
                     piece.removeEventListener("click", clickOn);
                     winner.innerHTML = `Winner is ${player} `;
+                } else if (player == '' && clickNum >= 9) {
+                    piece.removeEventListener("click", clickOn);
+                    winner.innerHTML = 'Its a draw!';
+                
+        
         
         
         
@@ -88,7 +99,7 @@ const check = () => {
             player = `Os`;
             
             
-        }
+        } 
     }
 }
 
