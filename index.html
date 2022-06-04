@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    
+
+    <div class="header"><h1>Tic-tac-toe</h1></div>
+
+    <div class="winner"></div>
+     
     <div class="net">
-       
         <div class="net_item"></div>
         <div class="net_item"></div>
         <div class="net_item"></div>
@@ -22,12 +25,21 @@
         <div class="net_item"></div>
     </div>
 
+    
 
-    <div class="winner"></div>
 
     <div class="new">
+        <button class="restart" type="submit">New game</button>
+        <button class="clear">Clear record</button>   
+    </div>
 
-    <button class="restart" type="submit">New game</button>
+    <div class="stat"></div>
+
+    <div id="overlay">   
+        <div id="res_window">
+            <div class="winner"></div>
+            <button class="restart" type="submit">New Game</button>
+        </div>  
     </div>
 
     
