@@ -19,15 +19,19 @@ for (const piece of netPieces) {
         //if (piece.classList.contains('red') || piece.classList.contains('blue')) {
           //  piece.removeEventListener("click", clickOn);
 
-        if (piece.contains == tic || piece.contains == toe) {
+        if (piece.contains == (tic || toe)) {
             piece.removeEventListener("click", clickOn);
             
 
-        }/* else if (player == '' && clickNum >= 9) {
+        } else if (player == '' && clickNum >= 9) {
             piece.removeEventListener("click", clickOn);
-            winner.innerHTML = 'Its a draw!';
+            winner.innerHTML = 'Its a draw!'; 
+        } else if (player == `Xs` || player == `Os`) {
+            piece.removeEventListener("click", clickOn);
+            winner.innerHTML = `Winner is ${player} `;
+            
         
-        }*/ else  {
+        } else  {
             if (clickNum%2 == 0) {
                 //piece.classList.add('red');
                 //piece.classList.remove('blue');
@@ -36,7 +40,8 @@ for (const piece of netPieces) {
                 clickNum++;
                 piece.removeEventListener("click", clickOn);
                 check();
-                if (player != '') {
+                winner.innerHTML = 'Os moves';
+                if (player == `Xs`) {
                     piece.removeEventListener("click", clickOn);
                     winner.innerHTML = `Winner is ${player} `;
                     
@@ -56,18 +61,20 @@ for (const piece of netPieces) {
                 clickNum++;
                 piece.removeEventListener("click", clickOn);
                 check();
-                if (player != '') {
+                winner.innerHTML = 'Xs moves';
+                if (player == `Os`) {
                     piece.removeEventListener("click", clickOn);
                     winner.innerHTML = `Winner is ${player} `;
                 } else if (player == '' && clickNum >= 9) {
                     piece.removeEventListener("click", clickOn);
-                    winner.innerHTML = 'Its a draw!';
+                    winner.innerHTML = 'Its a draw!'; 
+                }
                 
         
         
         
         
-                }
+                
             }  
 
         }
@@ -92,7 +99,6 @@ const check = () => {
     for(i=0; i<arr.length; i++) {
         if(piece[arr[i][0]].innerHTML == 'X' && piece[arr[i][1]].innerHTML == 'X' && piece[arr[i][2]].innerHTML == 'X') {
             player = `Xs`;
-            
             
 
         } else if (piece[arr[i][0]].innerHTML == 'O' && piece[arr[i][1]].innerHTML == 'O' && piece[arr[i][2]].innerHTML == 'O') {
