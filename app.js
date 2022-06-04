@@ -25,6 +25,9 @@ localStorage.getItem('x') != null ? x=localStorage.getItem('x') : x = 0 ;
 
 for (const piece of netPieces) {
     winner.innerHTML = 'Xs moves';
+    stat.innerHTML = `Statistics: 
+    <p><span style="color: red; font-weight: bold">X</span>s: ${x}</p>
+    <p><p><span style="color: blue; font-weight: bold">O</span>s: ${o}</p>`;
     
     piece.addEventListener("click", function clickOn() {
          
@@ -52,14 +55,18 @@ for (const piece of netPieces) {
                     piece.removeEventListener("click", clickOn);
                     x++;
                     winner.innerHTML = `Winner is ${player}!`;
-                    stat.innerHTML = `Statistics: <p>Xs: ${x}</p><p>Os: ${o}</p>`; 
+                    stat.innerHTML = `Statistics: 
+                    <p><span style="color: red; font-weight: bold">X</span>s: ${x}</p>
+                    <p><span style="color: blue; font-weight: bold">O</span>s: ${o}</p>`; 
                     localStorage.setItem('x', x);
                     //overlay.style.display = 'block';
                     
                 } else if (player == '' && clickNum >= 9) {
                     piece.removeEventListener("click", clickOn);
                     winner.innerHTML = `It's a draw, try again!`
-                    stat.innerHTML = `Statistics: <p>Xs: ${x}</p><p>Os: ${o}</p>`;
+                    stat.innerHTML = `Statistics: 
+                    <p><span style="color: red; font-weight: bold">X</span>s: ${x}</p>
+                    <p><p><span style="color: blue; font-weight: bold">O</span>s: ${o}</p>`;
                     //overlay.style.display = 'block';
                 
                 }
@@ -76,13 +83,17 @@ for (const piece of netPieces) {
                     piece.removeEventListener("click", clickOn);
                     o++;
                     winner.innerHTML = `Winner is ${player}!`;
-                    stat.innerHTML = `Statistics: <p>Xs: ${x}</p><p>Os: ${o}</p>`;  
+                    stat.innerHTML = `Statistics:
+                     <p><span style="color: red; font-weight: bold">X</span>s: ${x}</p>
+                     <p><p><span style="color: blue; font-weight: bold">O</span>s: ${o}</p>`;  
                     localStorage.setItem('o', o);
                     //overlay.style.display = 'block';
                 } else if (player == '' && clickNum >= 9) {
                     piece.removeEventListener("click", clickOn);
                     winner.innerHTML = `It's a draw, try again!`
-                    stat.innerHTML = `Statistics: <p>Xs: ${x}</p><p>Os: ${o}</p>`;
+                    stat.innerHTML = `Statistics:
+                     <p><span style="color: red; font-weight: bold">X</span>s: ${x}</p>
+                     <p><p><span style="color: blue; font-weight: bold">O</span>s: ${o}</p>`;
                     //overlay.style.display = 'block';
                 } 
             };
@@ -106,6 +117,7 @@ const check = () => {
     for(i=0; i<arr.length; i++) {
         if(piece[arr[i][0]].innerHTML == 'X' && piece[arr[i][1]].innerHTML == 'X' && piece[arr[i][2]].innerHTML == 'X') {
             player = `Xs`; 
+            
 
         } else if (piece[arr[i][0]].innerHTML == 'O' && piece[arr[i][1]].innerHTML == 'O' && piece[arr[i][2]].innerHTML == 'O') {
             player = `Os`;       

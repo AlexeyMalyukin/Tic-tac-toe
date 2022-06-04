@@ -78,6 +78,11 @@ h1 {
     opacity: 0.5;
 }
 
+.net_item.bg {
+    background-color: pink;
+    opacity: 0.2;
+}
+
 .net_item.red {
     color: red;
 }
