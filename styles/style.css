@@ -102,3 +102,12 @@
     cursor: pointer;
 
 }
+
+@media (hover:none) {
+    .net_item:hover {
+        background: 0;
+        opacity: inherit;
+        
+    }
+
+}
