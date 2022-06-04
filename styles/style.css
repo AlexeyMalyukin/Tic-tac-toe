@@ -6,8 +6,9 @@
 
     width: 318px;
     
-    /*background-image: url(../images/bg.png);
-    background-size: cover; */
+    background-image: url(../images/bg_notebook.jpg);
+    background-size: cover;
+
 }
 
 .net_item {
@@ -19,6 +20,7 @@
     text-align: center;
     
     color: blue;
+    transform: .1s background #fff opacity 0.5;
 }
 
 .net_item:nth-child(1) {
@@ -63,7 +65,8 @@
 
 
 .net_item:hover {
-    background-color: aliceblue;
+    background-color: #fff;
+    opacity: 0.5;
 }
 
 .net_item.red {

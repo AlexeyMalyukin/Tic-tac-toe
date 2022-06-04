@@ -13,28 +13,20 @@ var player = '';
 for (const piece of netPieces) {
     
     piece.addEventListener("click", function clickOn() {
-        //if (clickNum >= 8) {
-            //piece.removeEventListener("click", clickOn);
-        
-        //if (piece.classList.contains('red') || piece.classList.contains('blue')) {
-          //  piece.removeEventListener("click", clickOn);
-
+         
         if (piece.contains == (tic || toe)) {
-            piece.removeEventListener("click", clickOn);
-            
+            piece.removeEventListener("click", clickOn);   
 
         } else if (player == '' && clickNum >= 9) {
             piece.removeEventListener("click", clickOn);
             winner.innerHTML = 'Its a draw!'; 
+
         } else if (player == `Xs` || player == `Os`) {
             piece.removeEventListener("click", clickOn);
-            winner.innerHTML = `Winner is ${player} `;
-            
+             
         
         } else  {
             if (clickNum%2 == 0) {
-                //piece.classList.add('red');
-                //piece.classList.remove('blue');
                 piece.append(tic);
                 piece.classList.add('red');
                 clickNum++;
@@ -43,19 +35,15 @@ for (const piece of netPieces) {
                 winner.innerHTML = 'Os moves';
                 if (player == `Xs`) {
                     piece.removeEventListener("click", clickOn);
-                    winner.innerHTML = `Winner is ${player} `;
+                    winner.innerHTML = `Winner is ${player} `; 
                     
                 } else if (player == '' && clickNum >= 9) {
                     piece.removeEventListener("click", clickOn);
                     winner.innerHTML = 'Its a draw!';
                 
                 }
-               // if (clickNum >= 8) {
-                   // winner.innerHTML = `Winner is ${player} `;
-               // }
+    
             } else if (clickNum%2 != 0) {
-                //piece.classList.add('blue');
-                //piece.classList.remove('red');
                 piece.append(toe);
                 piece.classList.add('blue');
                 clickNum++;
@@ -64,23 +52,14 @@ for (const piece of netPieces) {
                 winner.innerHTML = 'Xs moves';
                 if (player == `Os`) {
                     piece.removeEventListener("click", clickOn);
-                    winner.innerHTML = `Winner is ${player} `;
+                    winner.innerHTML = `Winner is ${player} `; 
                 } else if (player == '' && clickNum >= 9) {
                     piece.removeEventListener("click", clickOn);
                     winner.innerHTML = 'Its a draw!'; 
-                }
-                
-        
-        
-        
-        
-                
-            }  
-
-        }
-    
-    })
-
+                } 
+            };
+        };
+    });
 }    
 
 
@@ -99,10 +78,12 @@ const check = () => {
     for(i=0; i<arr.length; i++) {
         if(piece[arr[i][0]].innerHTML == 'X' && piece[arr[i][1]].innerHTML == 'X' && piece[arr[i][2]].innerHTML == 'X') {
             player = `Xs`;
+            winner.innerHTML = `Winner is ${player} `; 
             
 
         } else if (piece[arr[i][0]].innerHTML == 'O' && piece[arr[i][1]].innerHTML == 'O' && piece[arr[i][2]].innerHTML == 'O') {
             player = `Os`;
+            winner.innerHTML = `Winner is ${player} `; 
             
             
         } 
